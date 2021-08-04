@@ -1,0 +1,18 @@
+grocery = ["Honey", "Mainda", "Powder", "Oil", "Wheat", "Rice", "Dal"]
+# print(grocery)
+# print(type(grocery))
+# print(grocery[3])
+num = [4, 6, 7, 8, 6, 1, 3, 4]
+# print(num)
+# print(len(num))
+# num.reverse()
+# num.append(56)
+# num.insert(0, 35)
+# num.pop(4)
+# num.clear()
+# num.copy()
+# num.remove(4)
+# num.extend([454])
+# num.sort()
+print(num)
+# print(num.count(4))
