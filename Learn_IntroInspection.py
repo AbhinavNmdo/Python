@@ -25,9 +25,9 @@ class Employee:
 
 abhay = Employee("Abhinav", "Nmadeo")
 
-print(abhay.email)
-del abhay.email
-print(abhay.email)
-print(abhay.fname)
-abhay.email = "abhay.namdeo@gmail.com"
-print(abhay.email)
+o = "this is a string"
+print(dir(o))
+print(id(o))
+
+import inspect
+print(inspect.getmembers(abhay))
