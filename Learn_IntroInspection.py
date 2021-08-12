@@ -1,3 +1,4 @@
+import inspect
 class Employee:
     def __init__(self,fname,lname):
         self.fname=fname
@@ -30,4 +31,3 @@ print(abhay.email)
 print(abhay.fname)
 abhay.email = "abhay.namdeo@gmail.com"
 print(abhay.email)
-
