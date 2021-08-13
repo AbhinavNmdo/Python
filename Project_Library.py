@@ -60,10 +60,14 @@ class AbhayLibrary:
             elif user == "issue":
                 print("Enter the book name to Issue")
                 bookname = input()
-                availableBooks.remove(bookname)
-                logcat(f"{name} Issue {bookname} book")
-                print("Your Book is Issued Successfully")
-                print("------------------------------------------------")
+                if bookname == availableBooks:
+                    availableBooks.remove(bookname)
+                    logcat(f"{name} Issue {bookname} book")
+                    print("Your Book is Issued Successfully")
+                    print("------------------------------------------------")
+                else:
+                    print("This Book is not available in the Library")
+
 
             elif user == "notes":
                 print("\n\t\t\tNotes")
