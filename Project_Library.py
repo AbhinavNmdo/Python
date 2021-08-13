@@ -20,6 +20,7 @@ class AbhayLibrary:
         print("| Type 'add' to Add        |")
         print("| Type 'return' to Return  |")
         print("| Type 'donate' to Donate  |")
+        print("| Type 'exit' to Donate    |")
         print("----------------------------")
 
         availableBooks = {"Java", "Python"}
@@ -74,6 +75,13 @@ class AbhayLibrary:
                 print("| Type 'donate' to Donate  |")
                 print("----------------------------")
 
+            elif user == "exit":
+                print(f"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tThanks {name} to Visiting Abhay's Library")
+                print("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+                break
+
+            else:
+                print("Enter valid value as Notes")
 
 
 
