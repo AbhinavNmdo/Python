@@ -1,6 +1,7 @@
-f1 = open("logcat.txt")
+
 try:
-    f2 = open("asdf.txt")
+    f1 = open("LibraryLog.txt")
+    # f2 = open("asdf.txt")
 
 except Exception as e:
     print(e)
