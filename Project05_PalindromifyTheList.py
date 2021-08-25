@@ -19,6 +19,9 @@ if __name__ == '__main__':
         print("Enter the number")
         num = int(input())
         lis.append(num)
-
+    new_lis = []
     for i in range(user):
-        print(f"The palindrome of {lis[i]} is {next_palindrome(lis[i])}")
+        n = next_palindrome(lis[i])
+        new_lis.append(n)
+
+    print(f"You enter {lis} and their palindrome is {new_lis}")
