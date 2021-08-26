@@ -1,26 +1,44 @@
 import random
-bothrnd = []
-rnd1 = random.randint(1, 20)
-bothrnd.append(rnd1)
-rnd2 = random.randint(1, 20)
-bothrnd.append(rnd2)
 
-bothturn = []
-turn1 = 0
-bothturn.append(turn1)
-turn2 = 0
-bothturn.append(turn2)
 
+def player(n, list):
+    for i in range(int(n)):
+        e = input("Enter Player name\n")
+        list.append(e)
+
+
+def turn(n, list):
+    for i in range(int(n)):
+        a = 0
+        list.append(a)
+
+
+def rand(n, list):
+    for i in range(int(n)):
+        rnd = random.randint(1, 20)
+        list.append(rnd)
+
+
+def winner():
+    large = min(bothturn)
+    index = bothturn.index(large)
+    print(f"Winner is {name[index]}")
+
+
+game = int(input("Enter the no of Players\n"))
 name = []
-player1 = input("Enter Player 1 name\n")
-name.append(player1)
-player2 = input("Enter Player 2 name\n")
-name.append(player2)
+bothrnd = []
+bothturn = []
+player(game, name)
+rand(game, bothrnd)
+turn(game, bothturn)
 
-print("Your need to guess the number between 1 and 20 and if you guess it in min number of times then opponents so you win\n")
+print(
+    "Your need to guess the number between 1 and 20 and if you guess it in min number of times then opponents so you win\n")
 
-for i in range(2):
+for i in range(game):
     print(f"{name[i]}'s turn")
+    print(bothrnd[i])
     while True:
         try:
             user = int(input("Enter your guess\n"))
@@ -44,12 +62,6 @@ for i in range(2):
         except:
             print("Something is wrong")
 
-
-if bothturn[0] > bothturn[1]:
-    print(f"{name[0]} wins the match")
-elif bothturn[0] < bothturn[1]:
-    print(f"{name[1]} wins the match")
-else:
-    print("Tie")
-
-
+print("---------------------------")
+winner()
+print("---------------------------")
