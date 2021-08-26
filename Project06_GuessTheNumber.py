@@ -19,10 +19,13 @@ def rand(n, list):
         list.append(rnd)
 
 
-def winner():
+def winner(n):
     large = min(bothturn)
     index = bothturn.index(large)
-    print(f"Winner is {name[index]} with {bothturn(index)} turns")
+    print(f"Player\t\t\tTurns")
+    for i in range(n):
+        print(f"{name[i]}\t\t\t{bothturn[i]}")
+    print(f"Winner is {name[index]}")
 
 
 game = int(input("Enter the no of Players\n"))
@@ -63,5 +66,5 @@ for i in range(game):
             print("Something is wrong")
 
 print("---------------------------")
-winner()
+winner(game)
 print("---------------------------")
