@@ -22,7 +22,7 @@ def rand(n, list):
 def winner():
     large = min(bothturn)
     index = bothturn.index(large)
-    print(f"Winner is {name[index]}")
+    print(f"Winner is {name[index]} with {bothturn(index)} turns")
 
 
 game = int(input("Enter the no of Players\n"))
