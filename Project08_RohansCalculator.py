@@ -5,12 +5,19 @@ def rohanCalculator(table):
         table.append(multi)
     table.remove(36)
     table.insert(5, 38)
-    print(table)
+    return table
 
 def checkRohanCal(table):
-    for i in range(table):
-
+    correctTable = []
+    for i in range(10):
+        multi = 6 * (i+1)
+        correctTable.append(multi)
+    for j in range(10):
+        if table[j] != correctTable[j]:
+            print(f"Something is wrong in {table[j]}")
 
 if __name__ == '__main__':
     rohanTabele = []
-    rohanCalculator(rohanTabele)
+    rohan = rohanCalculator(rohanTabele)
+    print(rohan)
+    checkRohanCal(rohan)
