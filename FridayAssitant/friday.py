@@ -1,5 +1,5 @@
 import pyttsx3
-import speech_recognition
+import speech_recognition as sr
 import wikipedia
 import pywhatkit
 import smtplib
@@ -19,21 +19,21 @@ def speak(audio):
 def greet():
     hour = int(datetime.datetime.now().hour)
     if hour>6 and hour<12:
-        speak("Good Morning, Abhinav")
+        speak("Good Morning, Abheenav")
     elif hour>12 and hour<17:
-        speak("Good Afternoon, Abhinav")
+        speak("Good Afternoon, Abheenav")
     else:
-        speak("Good Evening, Abhinav")
+        speak("Good Evening, Abheenav")
 
 def takeCommand():
-    r = speech_recognition.Recognizer()
-    with speech_recognition.Microphone as source:
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
         r.listen(source)
         try:
             print("Recognising...")
-            query = r.recognize_google('audio', language='en-in')
+            query = r.recognize_sphinx(, language='en-in')
             print(f"User said {query}\n")
         except Exception as e:
             print("Something is wrong")
