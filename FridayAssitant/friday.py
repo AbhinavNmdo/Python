@@ -8,24 +8,28 @@ import os
 import webbrowser
 import pyaudio
 import datetime
+from datetime import datetime
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 # print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
+
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+
 def greet():
     hour = int(datetime.datetime.now().hour)
-    if hour>6 and hour<12:
+    if hour > 6 and hour < 12:
         speak("Good Morning, Abheenav")
-    elif hour>12 and hour<17:
+    elif hour > 12 and hour < 17:
         speak("Good Afternoon, Abheenav")
     else:
         speak("Good Evening, Abheenav")
+
 
 def jarvisCommand():
     r = sr.Recognizer()
@@ -39,6 +43,7 @@ def jarvisCommand():
         except Exception as e:
             print(e)
         return reco
+
 
 def takeCommand():
     r = sr.Recognizer()
@@ -122,7 +127,7 @@ if __name__ == '__main__':
                     if 'father' in send:
                         speak("What message sir")
                         msg = takeCommand().lower()
-                        pywhatkit.sendwhatmsg_instantly('+919300272994', msg)
+                        pywhatkit.sendwhatmsg_instantly(father, msg)
                     elif 'mom' in send:
                         speak("What message sir")
                         msg = takeCommand().lower()
@@ -131,6 +136,17 @@ if __name__ == '__main__':
                         speak("What message sir")
                         msg = takeCommand().lower()
                         pywhatkit.sendwhatmsg_instantly(brother, msg)
+
+
+            elif 'tell me date' in query:
+                now = datetime.now()
+                date = now.strftime("%d:%m:Y")
+                speak(date)
+
+            elif 'tell me time' in query:
+                now = datetime.now()
+                time = now.strftime("%H:%M:%S")
+                speak(time)
 
 
 
